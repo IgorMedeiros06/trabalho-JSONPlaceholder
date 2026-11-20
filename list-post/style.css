@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --bg-body: rgb(14, 11, 90);
+    --bg-container: rgb(42, 42, 42);
+    --bg-form: rgb(95, 95, 0);
+    --bg-posts: rgb(80, 0, 0);
+    --var-post: rgb(121, 58, 0);
+    --bg-perfil: rgb(156, 201, 241);
+
+
+    --bg-border: black;
+    --color-nome: white;
+    --color-titulo: grey;
+    --color-post: red;
+}
+
+body{
+    background-color: var(--bg-body);
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-container);
+    padding: 2rem 3rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#form{
+    height: 10%;
+    width: 100%;
+    background-color: var(--bg-form);
+    border: 1px solid var(--bg-border);
+    padding: 10px 30px;
+    border-radius: 1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+#form input{
+    height: 2rem;
+    width: 85%;
+    padding: 0 10px;
+
+    border-radius: 1rem;
+    font-size: 1rem;
+}
+
+#form #order-text{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#form select{
+    height: 2rem;
+    border-radius: 12px;
+
+    font-size: 1rem;
+}
+
+.posts{
+    flex: 1;
+    background-color: var(--bg-posts);
+    border: 1px solid var(--bg-border);
+    border-radius: 1.5rem;
+    padding: 2rem 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-publicado{
+    background-color: var(--var-post);
+    width: 100%;
+    padding: 10px;
+    border-radius: 1.5rem;
+
+    display: grid;
+    grid-template-areas:
+    "foto nome"
+    "foto titulo"
+    "post post";
+    grid-template-columns: 4.3rem 1fr;
+    grid-template-rows: auto auto auto;
+    row-gap: 0.5rem;
+    column-gap: 0;
+}
+
+
+.post-publicado .nome-style{
+    grid-area: nome;
+}
+
+.post-publicado .nome-style #style{
+    background-color: var(--bg-perfil);
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+    border-radius: 1.5rem;
+}
+
+.post-publicado .img-style{
+    grid-area: foto;
+    background-color: var(--bg-perfil);
+    border-radius: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-publicado .img-style img{
+    height: 4.3rem;
+    width: 4.3rem;
+    border-radius: 5rem;
+}
+
+
+.post-publicado .nome-style h2{
+    font-size: 1.2rem;
+    color: var(--color-nome);
+}
+
+
+.post-publicado h1{
+    grid-area: titulo;
+    font-size: 2rem;
+    color: var(--color-titulo);
+}
+
+
+.post-publicado p{
+    grid-area: post;
+    font-size: 1.6rem;
+    color: var(--color-post);
+}
