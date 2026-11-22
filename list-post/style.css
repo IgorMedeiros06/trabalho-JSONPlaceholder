@@ -38,22 +38,33 @@ body{
 }
 
 #form{
-    height: 10%;
+    height: 12%;
     width: 100%;
     background-color: var(--bg-form);
     border: 1px solid var(--bg-border);
     padding: 10px 30px;
     border-radius: 1.5rem;
 
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-areas: 
+    "input input"
+    "p order";
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
     align-items: center;
-    gap: 5rem;
+    justify-items: center;
+    /* justify-content: center; */
+}
+
+#form #n-publi{
+    grid-area: p;
+
 }
 
 #form input{
+    grid-area: input;
     height: 2rem;
-    width: 85%;
+    width: 100%;
     padding: 0 10px;
 
     border-radius: 1rem;
@@ -61,6 +72,7 @@ body{
 }
 
 #form #order-text{
+    grid-area: order;
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -80,8 +92,10 @@ body{
     padding: 2rem 1rem;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .post-publicado{
@@ -93,7 +107,7 @@ body{
     display: grid;
     grid-template-areas:
     "foto nome"
-    "foto titulo"
+    "titulo titulo"
     "post post";
     grid-template-columns: 4.3rem 1fr;
     grid-template-rows: auto auto auto;
@@ -104,9 +118,12 @@ body{
 
 .post-publicado .nome-style{
     grid-area: nome;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.post-publicado .nome-style #style{
+.post-publicado .nome-style .style{
     background-color: var(--bg-perfil);
     width: fit-content;
     padding: 0.2rem 0.5rem;
@@ -138,13 +155,13 @@ body{
 
 .post-publicado h1{
     grid-area: titulo;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: var(--color-titulo);
 }
 
 
 .post-publicado p{
     grid-area: post;
-    font-size: 1.6rem;
+    font-size: 1rem;
     color: var(--color-post);
 }
