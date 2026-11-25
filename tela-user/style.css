@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    /* MESMA PALETA DAS TELAS DE POSTS E USUÁRIOS */
+    --bg-body: #171613;
+    --bg-container: #1C1B19;
+    --bg-form: #282621;
+    --bg-posts: #24221F;
+    --var-post: #37332C;
+
+    --bg-border: #514638;
+    --border-soft: rgba(227, 173, 98, 0.14);
+    --accent-amber: #E3AD62;
+    --accent-amber-strong: #F0BC74;
+    --bg-avatar: #514638;
+
+    --color-autor: #F7F1E7;
+    --color-titulo: #FFF8EF;
+    --color-post: #D8CCBE;
+    --color-meta: #C8B59B;
+    --color-username: #B3C4D1;
+    --color-icone: #9FB8C8;
+
+    --borda-post-hover: #E3AD62;
+    --sombra-post-hover: rgba(0, 0, 0, 0.35);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-body);
+    color: var(--color-post);
+}
+
+.container {
+    width: min(100%, 1200px);
+    min-height: 100vh;
+    padding: 2rem 3rem 3rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    background-color: var(--bg-container);
+}
+
+a {
+    color: inherit;
+}
+
+.voltar {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0.55rem;
+    padding: 0.4rem 0;
+    color: var(--color-meta);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.voltar svg {
+    height: 1.1rem;
+    width: 1.1rem;
+}
+
+.voltar:hover,
+.voltar:focus-visible {
+    color: var(--accent-amber);
+}
+
+.painel {
+    padding: 1.5rem;
+    border: 1px solid var(--bg-border);
+    border-radius: 1.5rem;
+    background-color: var(--var-post);
+}
+
+/* CARTÃO PRINCIPAL DE IDENTIFICAÇÃO */
+.perfil-topo {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    min-height: 9rem;
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 5.3rem;
+    height: 5.3rem;
+    flex-shrink: 0;
+    background-color: var(--bg-avatar);
+    border: 2px solid var(--accent-amber);
+    border-radius: 50%;
+    color: var(--accent-amber);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.perfil-identidade {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.numero-user {
+    color: var(--accent-amber);
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+.nome-user {
+    color: var(--color-autor);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.username {
+    color: var(--color-username);
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+}
+
+/* BLOCO DE INFORMAÇÕES */
+.titulo-secao {
+    color: var(--color-titulo);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.informacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 1.4rem;
+    margin-top: 1.4rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.icone-info {
+    flex-shrink: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.15rem;
+    color: var(--color-icone);
+}
+
+.info-texto {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.info-rotulo {
+    color: var(--color-meta);
+    font-size: 0.8rem;
+}
+
+.info-valor {
+    color: var(--color-autor);
+    font-size: 0.98rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* PUBLICAÇÕES RELACIONADAS AO USUÁRIO */
+.cabecalho-secao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+.titulo-com-contador {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.quantidade-posts {
+    font-size: 0.8rem;
+    color: var(--color-meta);
+}
+
+.ver-todas,
+.ver-post {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--accent-amber);
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.ver-todas svg,
+.ver-post svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.ver-todas:hover,
+.ver-todas:focus-visible {
+    color: var(--accent-amber-strong);
+    text-decoration: underline;
+}
+
+.lista-publicacoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.post-resumo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    min-width: 0;
+    min-height: 12rem;
+    padding: 1.1rem;
+    border: 1px solid transparent;
+    border-radius: 1.1rem;
+    background-color: var(--bg-form);
+    text-decoration: none;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.post-resumo:hover {
+    transform: translateY(-3px);
+    border-color: var(--borda-post-hover);
+    box-shadow: 0 0.6rem 1rem var(--sombra-post-hover);
+}
+
+.post-resumo:focus-visible,
+.voltar:focus-visible,
+.ver-todas:focus-visible {
+    outline: 2px solid var(--accent-amber);
+    outline-offset: 3px;
+}
+
+.post-numero {
+    font-size: 0.78rem;
+    color: var(--accent-amber);
+    font-weight: 600;
+}
+
+.post-resumo h3 {
+    color: var(--color-titulo);
+    font-size: 1.05rem;
+    line-height: 1.4;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.post-resumo p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    color: var(--color-post);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.ver-post {
+    margin-top: auto;
+    padding-top: 0.35rem;
+    font-size: 0.84rem;
+}
+
+@media (max-width: 850px) {
+    .container {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .informacoes-grid,
+    .lista-publicacoes {
+        grid-template-columns: 1fr;
+    }
+
+    .painel {
+        padding: 1.15rem;
+    }
+
+    .perfil-topo {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .avatar {
+        width: 4.1rem;
+        height: 4.1rem;
+        font-size: 1.25rem;
+    }
+
+    .perfil-topo {
+        gap: 0.8rem;
+    }
+
+    .cabecalho-secao {
+        align-items: flex-start;
+    }
+
+    .titulo-com-contador {
+        gap: 0.2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .voltar,
+    .post-resumo {
+        transition: none;
+    }
+}
