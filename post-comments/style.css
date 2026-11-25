@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    /* Paleta compartilhada com as páginas de posts e usuários */
+    --bg-body: #171613;
+    --bg-container: #1C1B19;
+    --bg-form: #282621;
+    --bg-posts: #24221F;
+    --var-post: #37332C;
+    --bg-border: #514638;
+    --border-soft: rgba(227, 173, 98, 0.14);
+
+    --accent-amber: #E3AD62;
+    --accent-amber-strong: #F0BC74;
+    --bg-avatar: #514638;
+
+    --color-autor: #F7F1E7;
+    --color-titulo: #FFF8EF;
+    --color-post: #D8CCBE;
+    --color-meta: #C8B59B;
+    --color-username: #B3C4D1;
+    --color-icone: #9FB8C8;
+
+    --bg-input: #332F29;
+    --color-input: #F4EEDF;
+    --color-placeholder: #AFA396;
+    --border-input: #63574A;
+    --border-input-focus: #E3AD62;
+    --sombra-input-focus: rgba(227, 173, 98, 0.20);
+
+    --borda-post-hover: #E3AD62;
+    --sombra-post-hover: rgba(0, 0, 0, 0.35);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-body);
+    color: var(--color-post);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.container {
+    width: min(100%, 1200px);
+    min-height: 100vh;
+    padding: 2rem 3rem 3rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    background-color: var(--bg-container);
+}
+
+.painel {
+    border: 1px solid var(--bg-border);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+}
+
+/* Voltar à listagem de posts */
+.voltar {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0.55rem;
+    padding: 0.4rem 0;
+    color: var(--color-meta);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.voltar svg {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.voltar:hover, .voltar:focus-visible {
+    color: var(--accent-amber);
+}
+
+/* Post em destaque, ocupando toda a largura do conteúdo */
+.post-detalhe {
+    background-color: var(--var-post);
+}
+
+.topo-post {
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.autor-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    max-width: 100%;
+    border-radius: 0.8rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.avatar-autor {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 4.3rem;
+    height: 4.3rem;
+    border: 2px solid var(--accent-amber);
+    border-radius: 50%;
+    background-color: var(--bg-avatar);
+    color: var(--accent-amber);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.identidade-autor {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+
+.numero-post {
+    color: var(--accent-amber);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.nome-autor {
+    color: var(--color-autor);
+    font-size: 1.2rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.username-autor {
+    color: var(--color-username);
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+}
+
+.autor-link:hover .nome-autor,
+.autor-link:focus-visible .nome-autor {
+    color: var(--accent-amber-strong);
+}
+
+.conteudo-post h1 {
+    margin-bottom: 0.9rem;
+    color: var(--color-titulo);
+    font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.conteudo-post p {
+    color: var(--color-post);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+/* Área de comentários e filtros */
+.comentarios {
+    background-color: var(--bg-form);
+}
+
+.cabecalho-comentarios {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-bottom: 1.1rem;
+}
+
+.cabecalho-comentarios h2 {
+    color: var(--color-titulo);
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+#n-comentarios {
+    color: var(--accent-amber);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#form-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.25rem;
+}
+
+.campo-pesquisa {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0 1rem;
+    min-height: 2.8rem;
+    border: 1px solid var(--border-input);
+    border-radius: 0.85rem;
+    background-color: var(--bg-input);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.campo-pesquisa svg {
+    flex-shrink: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--color-placeholder);
+}
+
+.campo-pesquisa:focus-within {
+    border-color: var(--border-input-focus);
+    box-shadow: 0 0 0 3px var(--sombra-input-focus);
+}
+
+.campo-pesquisa input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    padding: 0.8rem 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--color-input);
+    font-size: 0.98rem;
+}
+
+.campo-pesquisa input::placeholder {
+    color: var(--color-placeholder);
+}
+
+.ordenacao {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--color-meta);
+    font-size: 0.94rem;
+    font-weight: 500;
+}
+
+.ordenacao select {
+    height: 2.1rem;
+    padding: 0 0.65rem;
+    border: 1px solid var(--border-input);
+    border-radius: 0.7rem;
+    background-color: var(--bg-input);
+    color: var(--color-input);
+    font-size: 0.95rem;
+}
+
+.ordenacao select:focus-visible,
+.voltar:focus-visible,
+.autor-link:focus-visible {
+    outline: 2px solid var(--accent-amber);
+    outline-offset: 3px;
+}
+
+/* Cada comentário ocupa uma linha e cresce conforme seu conteúdo */
+.lista-comentarios {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+}
+
+.comentario {
+    min-width: 0;
+    padding: 1.2rem 1.3rem;
+    border: 1px solid var(--border-soft);
+    border-radius: 1.15rem;
+    background-color: var(--var-post);
+}
+
+.topo-comentario {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.identificacao-comentario {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
+}
+
+.icone-pessoa {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
+    color: var(--color-icone);
+}
+
+.email-comentario {
+    color: var(--color-username);
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+}
+
+.numero-comentario {
+    color: var(--accent-amber);
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.titulo-comentario {
+    margin-bottom: 0.5rem;
+    color: var(--color-titulo);
+    font-size: 1.03rem;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.texto-comentario {
+    color: var(--color-post);
+    font-size: 0.96rem;
+    line-height: 1.65;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 850px) {
+    .container {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .painel {
+        padding: 1.1rem;
+    }
+
+    .comentario {
+        padding: 1rem;
+    }
+
+    .conteudo-post h1 {
+        font-size: 1.4rem;
+    }
+
+    .avatar-autor {
+        width: 3.7rem;
+        height: 3.7rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .voltar,
+    .campo-pesquisa {
+        transition: none;
+    }
+}

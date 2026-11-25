@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da publicação</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Na etapa da API, adicione: <script src="scripts.js" defer></script> -->
+</head>
+<body>
+    <main class="container">
+        <!-- Retorno à página que lista todas as publicações. -->
+        <a class="voltar" href="../list-post/index-posts.html">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5m6 6-6-6 6-6" />
+            </svg>
+            Voltar às publicações
+        </a>
+
+        <!-- Publicação de exemplo. Posteriormente, a API fornecerá os dados do post e do autor. -->
+        <article class="post-detalhe painel" aria-labelledby="titulo-post">
+            <header class="topo-post">
+                <!-- Este link leva ao perfil do autor da publicação. -->
+                <a class="autor-link" href="../tela-user/index.html?id=1" aria-label="Abrir perfil de Leanne Graham">
+                    <span class="avatar-autor" aria-hidden="true">LG</span>
+                    <span class="identidade-autor">
+                        <span class="numero-post">Post nº 1</span>
+                        <span class="nome-autor">Leanne Graham</span>
+                        <span class="username-autor">@Bret</span>
+                    </span>
+                </a>
+            </header>
+
+            <div class="conteudo-post">
+                <h1 id="titulo-post">sunt aut facere repellat provident occaecati excepturi optio reprehenderit</h1>
+                <p>quia et suscipit
+suscipit recusandae consequuntur expedita et cum
+reprehenderit molestiae ut ut quas totam
+nostrum rerum est autem sunt rem eveniet architecto</p>
+            </div>
+        </article>
+
+        <!-- Comentários: os cards serão substituídos por elementos gerados via JavaScript. -->
+        <section class="comentarios painel" aria-labelledby="titulo-comentarios">
+            <div class="cabecalho-comentarios">
+                <h2 id="titulo-comentarios">Comentários</h2>
+                <p id="n-comentarios" aria-live="polite">5 comentários</p>
+            </div>
+
+            <!-- Os controles serão conectados à filtragem e ordenação na etapa do JS. -->
+            <form id="form-comentarios" role="search">
+                <div class="campo-pesquisa">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7" />
+                        <path d="m20 20-4-4" />
+                    </svg>
+                    <label for="pesquisa" class="sr-only">Pesquisar comentários</label>
+                    <input id="pesquisa" name="pesquisa" type="search" placeholder="Pesquisar comentários...">
+                </div>
+
+                <label class="ordenacao" for="order">
+                    Ordenar:
+                    <select id="order" name="order">
+                        <option value="AZ">A–Z</option>
+                        <option value="ZA">Z–A</option>
+                    </select>
+                </label>
+            </form>
+
+            <div class="lista-comentarios" aria-label="Comentários desta publicação">
+                <!-- Os conteúdos abaixo são apenas exemplos visuais para testar o layout. -->
+                <article class="comentario" data-id="1">
+                    <header class="topo-comentario">
+                        <div class="identificacao-comentario">
+                            <svg class="icone-pessoa" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 21a8 8 0 0 1 16 0" />
+                            </svg>
+                            <span class="email-comentario">Eliseo@gardner.biz</span>
+                        </div>
+                        <span class="numero-comentario">#1</span>
+                    </header>
+                    <h3 class="titulo-comentario">id labore ex et quam laborum</h3>
+                    <p class="texto-comentario">Comentário demonstrativo com algumas linhas de texto para visualizar o espaçamento do card e o comportamento da altura automática.</p>
+                </article>
+
+                <article class="comentario" data-id="2">
+                    <header class="topo-comentario">
+                        <div class="identificacao-comentario">
+                            <svg class="icone-pessoa" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 21a8 8 0 0 1 16 0" />
+                            </svg>
+                            <span class="email-comentario">Jayne_Kuhic@sydney.com</span>
+                        </div>
+                        <span class="numero-comentario">#2</span>
+                    </header>
+                    <h3 class="titulo-comentario">quo vero reiciendis velit similique earum</h3>
+                    <p class="texto-comentario">Outro comentário de exemplo, desta vez com um corpo mais curto.</p>
+                </article>
+
+                <article class="comentario" data-id="3">
+                    <header class="topo-comentario">
+                        <div class="identificacao-comentario">
+                            <svg class="icone-pessoa" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 21a8 8 0 0 1 16 0" />
+                            </svg>
+                            <span class="email-comentario">Nikita@garfield.biz</span>
+                        </div>
+                        <span class="numero-comentario">#3</span>
+                    </header>
+                    <h3 class="titulo-comentario">odio adipisci rerum aut animi</h3>
+                    <p class="texto-comentario">Este texto é intencionalmente mais longo para testar a adaptação do cartão. Cada comentário ocupa apenas a altura necessária, sem obrigar os outros a terem exatamente o mesmo tamanho. Quando integrarmos a API, os textos reais serão inseridos aqui automaticamente.</p>
+                </article>
+
+                <article class="comentario" data-id="4">
+                    <header class="topo-comentario">
+                        <div class="identificacao-comentario">
+                            <svg class="icone-pessoa" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 21a8 8 0 0 1 16 0" />
+                            </svg>
+                            <span class="email-comentario">Lew@alysha.tv</span>
+                        </div>
+                        <span class="numero-comentario">#4</span>
+                    </header>
+                    <h3 class="titulo-comentario">alias odio sit</h3>
+                    <p class="texto-comentario">Exemplo de resposta breve, mantendo a mesma largura e as mesmas margens.</p>
+                </article>
+
+                <article class="comentario" data-id="5">
+                    <header class="topo-comentario">
+                        <div class="identificacao-comentario">
+                            <svg class="icone-pessoa" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 21a8 8 0 0 1 16 0" />
+                            </svg>
+                            <span class="email-comentario">Hayden@althea.biz</span>
+                        </div>
+                        <span class="numero-comentario">#5</span>
+                    </header>
+                    <h3 class="titulo-comentario">vero eaque aliquid doloribus et culpa</h3>
+                    <p class="texto-comentario">Último comentário estático desta publicação. A lista crescerá ou diminuirá de acordo com os dados retornados pela API.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
