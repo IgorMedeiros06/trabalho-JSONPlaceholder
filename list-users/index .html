@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="sr-only">Lista de usuários</h1>
+
+        <form id="form" role="search">
+            <label for="pesquisa" class="sr-only">Pesquisar usuários</label>
+            <div class="campo-pesquisa">
+                <svg class="icone-pesquisa" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-4-4"></path>
+                </svg>
+                <input type="search" id="pesquisa" name="pesquisa" placeholder="Pesquise um usuário...">
+            </div>
+
+            <p id="n-publi">10 usuários</p>
+
+            <label for="order" id="order-text">
+                Ordenar:
+                <select name="order" id="order">
+                    <option value="AZ">A–Z</option>
+                    <option value="ZA">Z–A</option>
+                </select>
+            </label>
+        </form>
+
+        <main class="users" aria-label="Usuários">
+            <!-- Cards de exemplo. Depois serão gerados a partir da API JSONPlaceholder. -->
+            <!-- Ajuste o href quando a página individual de perfil for criada. -->
+            <a class="user-ativo" href="../perfil/index.html?id=1" aria-label="Ver perfil de Leanne Graham">
+                <div class="topo-user">
+                    <div class="img-style" aria-hidden="true">LG</div>
+                    <div class="cabecalho">
+                        <span class="numero-user">Usuário #1</span>
+                        <h2 class="nome">Leanne Graham</h2>
+                        <span class="username">@Bret</span>
+                    </div>
+                </div>
+
+                <div class="corpo">
+                    <p class="info">
+                        <svg class="icone-info" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                            <path d="m3 7 9 6 9-6"></path>
+                        </svg>
+                        <span>Sincere@april.biz</span>
+                    </p>
+                    <p class="info">
+                        <svg class="icone-info" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18M5 21V4h10v17M15 10h4v11M8 8h1M8 12h1M8 16h1M12 8h1M12 12h1M12 16h1"></path>
+                        </svg>
+                        <span>Romaguera-Crona</span>
+                    </p>
+                </div>
+
+                <span class="ver-perfil">Ver perfil
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14m-6-6 6 6-6 6"></path>
+                    </svg>
+                </span>
+            </a>
+
+            <a class="user-ativo" href="../perfil/index.html?id=2" aria-label="Ver perfil de Ervin Howell">
+                <div class="topo-user">
+                    <div class="img-style" aria-hidden="true">EH</div>
+                    <div class="cabecalho">
+                        <span class="numero-user">Usuário #2</span>
+                        <h2 class="nome">Ervin Howell</h2>
+                        <span class="username">@Antonette</span>
+                    </div>
+                </div>
+
+                <div class="corpo">
+                    <p class="info">
+                        <svg class="icone-info" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                            <path d="m3 7 9 6 9-6"></path>
+                        </svg>
+                        <span>Shanna@melissa.tv</span>
+                    </p>
+                    <p class="info">
+                        <svg class="icone-info" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 21h18M5 21V4h10v17M15 10h4v11M8 8h1M8 12h1M8 16h1M12 8h1M12 12h1M12 16h1"></path>
+                        </svg>
+                        <span>Deckow-Crist</span>
+                    </p>
+                </div>
+
+                <span class="ver-perfil">Ver perfil
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14m-6-6 6 6-6 6"></path>
+                    </svg>
+                </span>
+            </a>
+        </main>
+    </div>
+</body>
+</html>
