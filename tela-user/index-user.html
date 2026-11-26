@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Leanne Graham</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Quando chegar a etapa da API, adicione: <script src="scripts.js" defer></script> -->
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <main class="container">
-        <!-- A navegação aponta para a página de listagem que você já criou. -->
         <a class="voltar" href="../list-users/index-list-users.html">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 12H5m6 6-6-6 6-6" />
@@ -17,7 +16,6 @@
             Voltar aos usuários
         </a>
 
-        <!-- Dados estáticos do usuário #1, que futuramente virão de /users/:id. -->
         <header class="perfil-topo painel">
             <div class="avatar" aria-hidden="true">LG</div>
             <div class="perfil-identidade">
@@ -27,7 +25,6 @@
             </div>
         </header>
 
-        <!-- Informações resumidas. O endereço foi reduzido à cidade. -->
         <section class="painel informacoes" aria-labelledby="titulo-informacoes">
             <h2 class="titulo-secao" id="titulo-informacoes">Informações do perfil</h2>
             <div class="informacoes-grid">
@@ -86,14 +83,12 @@
             </div>
         </section>
 
-        <!-- Cards de exemplo. Futuramente, o JS consultará os posts pelo userId. -->
         <section class="painel publicacoes" aria-labelledby="titulo-publicacoes">
             <div class="cabecalho-secao">
                 <div class="titulo-com-contador">
                     <h2 class="titulo-secao" id="titulo-publicacoes">Publicações do usuário</h2>
                     <span class="quantidade-posts">2 em destaque</span>
                 </div>
-                <!-- Filtragem por userId a implementar na página de listagem. -->
                 <a class="ver-todas" href="../list-post/index.html?userId=1">
                     Ver todas
                     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
