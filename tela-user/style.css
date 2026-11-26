@@ -8,7 +8,6 @@
 }
 
 :root {
-    /* MESMA PALETA DAS TELAS DE POSTS E USUÁRIOS */
     --bg-body: #171613;
     --bg-container: #1C1B19;
     --bg-form: #282621;
@@ -83,7 +82,6 @@ a {
     background-color: var(--var-post);
 }
 
-/* CARTÃO PRINCIPAL DE IDENTIFICAÇÃO */
 .perfil-topo {
     display: flex;
     align-items: center;
@@ -112,12 +110,6 @@ a {
     gap: 0.3rem;
 }
 
-.numero-user {
-    color: var(--accent-amber);
-    font-size: 0.83rem;
-    font-weight: 600;
-}
-
 .nome-user {
     color: var(--color-autor);
     font-size: clamp(1.5rem, 3vw, 2rem);
@@ -131,7 +123,6 @@ a {
     overflow-wrap: anywhere;
 }
 
-/* BLOCO DE INFORMAÇÕES */
 .titulo-secao {
     color: var(--color-titulo);
     font-size: 1.2rem;
@@ -181,7 +172,6 @@ a {
     overflow-wrap: anywhere;
 }
 
-/* PUBLICAÇÕES RELACIONADAS AO USUÁRIO */
 .cabecalho-secao {
     display: flex;
     align-items: center;
